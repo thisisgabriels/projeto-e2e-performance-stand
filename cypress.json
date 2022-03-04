@@ -1,0 +1,6 @@
+{
+    "viewportWidth": 1024,
+    "viewportHeight": 768,
+    "defaultCommandTimeout:": 20000,
+    "baseUrl": "https://zsa-pssa-dev-app01.azurewebsites.net/auth/login"
+}
