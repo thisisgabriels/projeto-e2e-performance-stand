@@ -1,39 +1,48 @@
 export const TelaMasterlist = {
-
-    VerificarElementosDaTelaMasterlist(){
-        cy.get('.row-header > :nth-child(1) > span').should('have.text', 'Title')
-        cy.get('.row-header > :nth-child(2) > span').should('have.text', '2500 Rev')
-        cy.get('.row-header > :nth-child(3) > span').should('have.text', 'Sys Ver')
-        cy.get(':nth-child(4) > span').should('have.text', 'Status')
-        cy.get('.row-header > :nth-child(5) > span').should('have.text', 'Published')
-        cy.get('.row-header > :nth-child(6) > span').should('have.text', 'Last Modified')
-        cy.get('.row-header > :nth-child(7) > span').should('have.text', 'Ps On Going')
-        cy.get('.row-header > :nth-child(8) > span').should('have.text', 'Actions')
+    
+    ClicoNoIconeIconeHistory(){
+        cy.get(':nth-child(1) > .mat-card-actions > .span-col-12 > :nth-child(1) > .mat-focus-indicator > .mat-button-wrapper > .mat-icon').click()
     },
 
-    VerificarModalHistory(){
-        cy.get('.actions > :nth-child(1) > .mat-icon').click()
+    VerificoModalHistory(){
         cy.get('#mat-dialog-title-0').should('have.text', 'MASTERLIST HISTORY')
-        cy.get('app-table.ng-star-inserted > .table-list > .row-header > :nth-child(1) > span').should('have.text', 'Date')
-        cy.get('app-table.ng-star-inserted > .table-list > .row-header > :nth-child(2) > span').should('have.text', 'User')
-        cy.get('app-table.ng-star-inserted > .table-list > .row-header > :nth-child(3) > span').should('have.text', 'Operation')
-        cy.get('app-table.ng-star-inserted > .table-list > .row-header > :nth-child(5) > span').should('have.text', 'Status')
-        cy.get('.span-col-4 > app-button > .button-style').click()
+        cy.contains('Date')
+        cy.contains('User')
+        cy.contains('Operation')
+        cy.contains('Description')
+        cy.contains('Status')
+        cy.get('.span-col-4 > app-button > .mat-focus-indicator').click()
     },
-    VerificarListaDePS(){
-        cy.get(':nth-child(3) > .mat-icon').click()
-        cy.get('.row-header > :nth-child(1) > span').should('have.text', 'SCE ID')
-        cy.get('.row-header > :nth-child(2) > span').should('have.text', 'SCE Category')
-        cy.get('.row-header > :nth-child(3) > span').should('have.text', 'SCE Description')
-        cy.get('.row-header > :nth-child(4) > span').should('have.text', 'Regulations')
-        cy.get('.row-header > :nth-child(5) > span').should('have.text', 'Status')
-        cy.get('.row-header > :nth-child(6) > span').should('have.text', 'Last Modified')
-        cy.get('.row-header > :nth-child(7) > span').should('have.text', 'Actions')
-        cy.get('.mat-paginator-navigation-next > .mat-button-wrapper > .mat-paginator-icon').click()
-        cy.get('.mat-paginator-navigation-previous > .mat-button-wrapper > .mat-paginator-icon').click()
+
+    ClicoNoIconeIconeVisualizarPerformanceStandard(){
+        cy.get(':nth-child(1) > .mat-card-actions > .span-col-12 > :nth-child(2) > .mat-focus-indicator > .mat-button-wrapper > .mat-icon').click()
     },
-    VerificarEdicaoPS(){
+
+    VerificoTelaPerformanceStandard(){ 
+       
+        //delete performance standard
+        cy.get(':nth-child(3) > :nth-child(7) > .actions > :nth-child(3) > .mat-icon').click()
+        cy.get('.swal2-confirm').click()
+        //cy.get('.swal2-popup').should('have.text', 'Your work was deleted')
+        cy.wait(3000)
+
+        //edit performance standard
         cy.get(':nth-child(2) > :nth-child(7) > .actions > :nth-child(2)').click()
-        cy.get('.mat-form-field.ng-tns-c98-35 > .mat-form-field-wrapper > .mat-form-field-flex > .mat-form-field-infix').type('@')
-    }
+        cy.wait(5000)
+
+        //Add coments
+        cy.get('.mat-form-field.ng-tns-c48-61 > .mat-form-field-wrapper > .mat-form-field-flex > .mat-form-field-suffix > [name="Comments"] > .mat-button-wrapper > .mat-icon').click()
+        cy.get('#mat-input-162').type('Teste com cypress')
+        cy.contains('send').click()
+
+        //Button History
+        cy.get(':nth-child(2) > app-button.opacity > .mat-focus-indicator > .mat-button-wrapper').click()
+        cy.wait(3000)
+        cy.get('#mat-input-12').clear()
+        cy.get('#mat-input-12').type('Gabriel')
+        cy.get(':nth-child(3) > :nth-child(2) > .mat-focus-indicator > .mat-button-wrapper').click()
+        cy.get('.swal2-confirm').click()
+        
+    },
+    
 }

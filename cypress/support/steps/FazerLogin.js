@@ -9,4 +9,5 @@ When(/^valido login$/, () => {
 });
 
 Then(/^sou redirecionado para tela de Masterlist$/, () => {
+	TelaLogin.TelaMasterlist()
 });

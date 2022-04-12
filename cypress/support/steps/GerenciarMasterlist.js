@@ -6,47 +6,19 @@ Given(/^que estou logado$/, () => {
     TelaLogin.ValidarLogin()
 });
 
-When(/^visualizo tela de Masterlist$/, () => {
-	TelaMasterlist.VerificarElementosDaTelaMasterlist()
+When(/^clico no ícone histórico$/, () => {
+	TelaMasterlist.ClicoNoIconeIconeHistory()
 });
 
-Then(/^é exibido elementos da tela$/, () => {
-	return true;
+Then(/^valido modal histórico$/, () => {
+	TelaMasterlist.VerificoModalHistory()
 });
 
 
-Given(/^que estou na tela Masterlist$/, () => {
-	return true;
+When(/^clico no ícone performance standard$/, () => {
+	TelaMasterlist.ClicoNoIconeIconeVisualizarPerformanceStandard()
 });
 
-When(/^clico em History$/, () => {
-	TelaMasterlist.VerificarModalHistory()
+Then(/^valido modal tela performance standard$/, () => {
+	TelaMasterlist.VerificoTelaPerformanceStandard()
 });
-
-Then(/^é exibido tabela de alterações da Masterlist$/, () => {
-	return true;
-});
-
-Given(/^que estou na tela Masterlist$/, () => {
-	return true;
-});
-
-When(/^clico em description$/, () => {
-	TelaMasterlist.VerificarListaDePS()
-});
-
-Then(/^é exibido lista de Performance Standards$/, () => {
-	return true;
-});
-
-// Given(/^que estou na tela Masterlist$/, () => {
-// 	return true;
-// });
-
-// When(/^clico em edite$/, () => {
-// 	TelaMasterlist.VerificarEdicaoPS()
-// });
-
-// Then(/^realizo edição da tela$/, () => {
-// 	return true;
-// });

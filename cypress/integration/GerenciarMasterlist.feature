@@ -2,22 +2,14 @@
 Feature: Gerenciar Masterlist
         Eu sou um usuário e validar funcionalidades da tela Masterlist
         
-    Scenario: Validar Elementos da tela Masterlist
+    Scenario: Validar Modal History
     Given que estou logado
-    When visualizo tela de Masterlist
-    Then é exibido elementos da tela
+    When clico no ícone histórico
+    Then valido modal histórico
 
-    Scenario: Validar modal History
-    Given que estou na tela Masterlist
-    When clico em History
-    Then é exibido tabela de alterações da Masterlist
+    Scenario: Validar tela Performance Standard
+    When clico no ícone performance standard
+    Then valido modal tela performance standard
 
-    Scenario: Validar Tela Performance Standard
-    Given que estou na tela Masterlist
-    When clico em description
-    Then é exibido lista de Performance Standards
 
-    Scenario: Validar Tela Edição de Performance Standard
-    Given que estou na tela Masterlist
-    When clico em edite
-    Then realizo edição da tela
+
