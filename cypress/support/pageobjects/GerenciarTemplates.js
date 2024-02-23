@@ -15,7 +15,7 @@ export const TelaTemplates = {
     },
     
     CrioNovoTemplate(){
-        cy.get('#mat-input-6').focus().type('Teste00900089019982803930',{force:true})
+        cy.get('#mat-input-1').focus().type('Teste00900089019982803930',{force:true})
         cy.get(':nth-child(1) > .mat-list-item-content > .mat-pseudo-checkbox').click()
         cy.get(':nth-child(2) > .mat-list-item-content > .mat-pseudo-checkbox').click()
         cy.get(':nth-child(3) > .mat-list-item-content > .mat-pseudo-checkbox').click()
@@ -36,11 +36,11 @@ export const TelaTemplates = {
     },
 
     CrioNovoDocumento(){
-        cy.get('input[id="mat-input-7"]').type('Novo documento de testes', {force:true})
+        cy.get('input[id="mat-input-1"]').type('Novo documento de testes', {force:true})
         cy.get('#mat-radio-3 > .mat-radio-label > .mat-radio-container').click()
         cy.wait(3000)
         cy.get('.mat-select-placeholder').click(), {force:true}
-        cy.get('#mat-option-16 > .mat-option-text').click()
+        cy.get('#mat-option-0 > .mat-option-text').click()
         cy.get('#mat-checkbox-2 > .mat-checkbox-layout > .mat-checkbox-inner-container').click()
         cy.get('.mat-dialog-actions > app-button > .mat-focus-indicator > .mat-button-wrapper').click()
     },
@@ -57,20 +57,20 @@ export const TelaTemplates = {
         cy.contains('Actions')
         
         //Download
-        cy.get(':nth-child(2) > :nth-child(5) > .actions > :nth-child(1) > .mat-icon').click()
+        cy.get(':nth-child(2) > :nth-child(6) > .actions > :nth-child(1) > .mat-icon').click()
         cy.get('.swal2-confirm').click()
         
         //Envio de email
-        cy.get(':nth-child(2) > :nth-child(5) > .actions > :nth-child(2) > .mat-icon').click()
+        cy.get(':nth-child(2) > :nth-child(6) > .actions > :nth-child(2) > .mat-icon').click()
         cy.wait(3000)
         cy.get('.mat-form-field-hide-placeholder > .mat-form-field-wrapper > .mat-form-field-flex > .mat-form-field-infix').type('Novo email')
-        cy.get('.mat-pseudo-checkbox').click()
+        cy.get(':nth-child(3) > .mat-list-item-content > .mat-pseudo-checkbox').click()
         cy.contains('Send').click()
         cy.get('.swal2-confirm').click()
         cy.get('[mat-dialog-close=""] > .mat-focus-indicator > .mat-button-wrapper').click()
 
         //Delete
-        cy.get(':nth-child(5) > :nth-child(5) > .actions > :nth-child(4) > .mat-icon').click()
+        cy.get(':nth-child(2) > :nth-child(6) > .actions > :nth-child(4) > .mat-icon').click()
         cy.get('.swal2-confirm').click()
     }
 

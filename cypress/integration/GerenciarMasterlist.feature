@@ -7,9 +7,19 @@ Feature: Gerenciar Masterlist
     When clico no ícone histórico
     Then valido modal histórico
 
-    Scenario: Validar tela Performance Standard
-    When clico no ícone performance standard
-    Then valido modal tela performance standard
+    Scenario: Validar Modal Edite Masterlist
+    When clico no ícone edite
+    Then valido consigo editar Masterlist
+
+    # Scenario: Validar aba Archived
+    # When clico em Archived
+    # Then valido aba Archived
+
+    # Scenario: Validar tela Performance Standard
+    # When clico no ícone performance standard
+    # Then valido modal tela performance standard
+
+
 
 
 

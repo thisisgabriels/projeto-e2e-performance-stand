@@ -5,7 +5,7 @@ export const TelaLogin = {
     ValidarLogin(){
         cy.viewport(1440, 900)
         cy.get('.mat-form-field-infix').type('owner@modec.com')
-        cy.contains('Login').click()
+        cy.get('.horizontal-center > .mat-focus-indicator').click()
     },
 
     TelaMasterlist(){

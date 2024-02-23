@@ -86,12 +86,12 @@ export const TelaProfiles = {
     },
 
     ClicoNoBotaoAddUser(){
-        cy.get('app-button > .mat-focus-indicator > .mat-button-wrapper').click()
+        cy.get(':nth-child(1) > .mat-focus-indicator > .mat-button-wrapper').click()
     },
 
     CrioNovoUsuario(){
-        cy.get('#mat-input-6').focus().type('Teste',{force:true})
-        cy.get('.mat-form-field.ng-tns-c48-42 > .mat-form-field-wrapper > .mat-form-field-flex > .mat-form-field-infix').type('xenia6970@uorak.com')
+        cy.get('#mat-input-1').focus().type('Teste02',{force:true})
+        cy.get('#mat-input-2').type('xenia6970@uorak.com')
         cy.get('.mat-dialog-actions > :nth-child(2) > .mat-focus-indicator > .mat-button-wrapper').click()
     }
 }
